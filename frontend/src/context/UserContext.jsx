@@ -18,7 +18,8 @@ const getErrorMessage = (error, fallback) =>
   error?.response?.data?.message || error?.message || fallback
 
 function UserContext({ children }) {
-  const serverUrl = 'http://localhost:8000'
+  // const serverUrl = 'http://localhost:8000'
+  const serverUrl = 'https://jarvis-v1-iia7.onrender.com'
 
   const api = useMemo(() => axios.create({
     baseURL: serverUrl,

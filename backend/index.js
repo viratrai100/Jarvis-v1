@@ -10,12 +10,15 @@ import geminiResponse from "./gemini.js"
 
 
 const app=express()
-app.use(cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
-    credentials:true,
+app.use(
+  cors({
+    // origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin: process.env.CLIENT_ORIGIN || "https://jarvis-v1-omega.vercel.app/",
+    credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}))
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 
 const port=process.env.PORT || 5000
 app.use(express.json())
